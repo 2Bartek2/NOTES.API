@@ -8,6 +8,8 @@ const Notes = sequelize.define(
 		id: {
 			type: Sequelize.INTEGER,
 			primaryKey: true,
+			allownull:false,
+			autoIncrement: true
 		},
 		title: {
 			type: Sequelize.STRING(100),
@@ -22,6 +24,9 @@ const Notes = sequelize.define(
 		paranoid: true,
 	}
 );
-console.log(Notes);
+// sequelize.sync({force: true})
+// .then(() => {
+// 	console.log('database and tables created');
+// })
 
 module.exports = { Notes }
